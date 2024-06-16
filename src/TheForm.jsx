@@ -6,7 +6,7 @@ const TheForm = () => {
   const YupSchema = Yup.object().shape({
     name: Yup.string().required('Name cannot be empty'),
     email: Yup.string().email('Invalid email').required('Email is required'),
-    age: Yup.number().positive('Age must be a positive number').integer('Age must be a whole number'),
+    age: Yup.number().positive().integer(),
     street: Yup.string().required('Street is required'),
     city: Yup.string().required('City is required'),
     friend: Yup.array().of(Yup.string().required('Add at least one friend')).min(1, "Add at least one friend's name"),
